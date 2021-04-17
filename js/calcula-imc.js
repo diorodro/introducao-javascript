@@ -1,6 +1,10 @@
 var titulo = document.querySelector(".titulo")
 titulo.textContent = "Aparecida Nutricionista"
 
+titulo.addEventListener("click", function() {
+    console.log("Alõ, seja bem-vindo!")
+});
+
 var pacientes = document.querySelectorAll(".paciente")
 
 
@@ -33,8 +37,17 @@ for (var i = 0; i < pacientes.length; i++) {
     }
 
     if (pesoValido && alturaValida) {
-        var IMC = peso / (altura * altura)
-        tdImc.textContent = IMC.toFixed(2)
+        var IMC = calculaImc(peso, altura)
+        tdImc.textContent = IMC
     }
+}
 
+function calculaImc(peso, altura) {
+    var imc = 0
+
+    imc = peso / (altura * altura)
+    console.log(imc)
+    console.log(altura)
+    console.log(peso)
+    return imc.toFixed(2)
 }
