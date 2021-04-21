@@ -10,7 +10,6 @@ botaoAdicionar.addEventListener("click", function() {
 
         if (xhr.status == 200) {
             mostraErro.classList.add("invisivel")
-
             var resposta = xhr.responseText
             var pacientes = JSON.parse(resposta)
             adicionaPacienteNaTabela(pacientes)
